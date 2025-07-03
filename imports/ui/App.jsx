@@ -1,14 +1,21 @@
 import React from 'react';
-import Calculator from './Calculator';
 
 const App = () => (
   <div className="app">
     <header>
-      <h1>Simple Calculator</h1>
-      <p>Built with Meteor & React</p>
+      <h1>Simple Calculator Test</h1>
+      <p>Testing dharapo:simple-calculator package</p>
     </header>
     
-    <Calculator />
+    {typeof SimpleCalculator !== 'undefined' ? (
+      <SimpleCalculator 
+        onCalculation={(result) => {
+          console.log('Calculation:', result);
+        }}
+      />
+    ) : (
+      <div>Loading calculator...</div>
+    )}
   </div>
 );
 
